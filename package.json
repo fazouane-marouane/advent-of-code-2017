@@ -2,8 +2,9 @@
   "name": "advent-of-code-2017",
   "version": "0.1.0",
   "scripts": {
+    "start": "node src/runner.bs.js",
     "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
+    "watch": "bsb -make-world -w",
     "clean": "bsb -clean-world"
   },
   "keywords": [
