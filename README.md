@@ -1,10 +1,17 @@
-# Basic Reason Template
+# Advent of Code 2017
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+Those are my personal solutions to [Advent of Code 2017](http://adventofcode.com/2017).
 
 # Build
+
 ```
 npm run build
+```
+
+# Run
+
+```
+npm start day01
 ```
 
 # Build + Watch
@@ -13,6 +20,6 @@ npm run build
 npm run watch
 ```
 
-
 # Editor
+
 If you use `vscode`, Press `Windows + Shift + B` it will build automatically
