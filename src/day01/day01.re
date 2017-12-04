@@ -1,21 +1,21 @@
 open AdventHelpers;
 
-let zip_map = (f, acc, length, accessor1, accessor2) => {
-  let rec zip_map_helper = (n, acc) =>
+let fold = (f, acc, length, nthElement) => {
+  let rec fold_helper = (n, acc) =>
     if (n == length) {
       acc
     } else {
-      zip_map_helper(n + 1, f(accessor1(n), accessor2(n), acc))
+      fold_helper(n + 1, f(nthElement(n), acc))
     };
-  zip_map_helper(0, acc)
+  fold_helper(0, acc);
 };
 
+
 let captcha = (str, shift) => {
-  let compare_accumulate = (c1, c2, acc) => acc + (c1 == c2 ? int_of_string(Char.escaped(c1)) : 0);
+  let accumulator = ((c1, c2), acc) => acc + (c1 == c2 ? int_of_string(Char.escaped(c1)) : 0);
   let length = String.length(str);
-  let accessor1 = (i) => str.[i];
-  let accessor2 = (i) => str.[(i + shift) mod length];
-  zip_map(compare_accumulate, 0, length, accessor1, accessor2)
+  let nthElement = (i) => (str.[i], str.[(i + shift) mod length]);
+  fold(accumulator, 0, length, nthElement);
 };
 
 [@bs.val] external dirname : string = "__dirname";
