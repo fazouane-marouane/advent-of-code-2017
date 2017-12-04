@@ -5,7 +5,9 @@
     "start": "node src/runner.bs.js",
     "build": "bsb -make-world",
     "watch": "bsb -make-world -w",
-    "clean": "bsb -clean-world"
+    "clean": "bsb -clean-world",
+    "test": "jest --testMatch=**/*_test.bs.js",
+    "test-watch": "jest --watch --testMatch=**/*_test.bs.js"
   },
   "keywords": [
     "BuckleScript"
@@ -13,6 +15,8 @@
   "author": "Fazouane Marouane <fazouanem3@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^2.1.0"
+    "bs-jest": "^0.2.0",
+    "bs-platform": "^2.1.0",
+    "jest": "^21.2.1"
   }
 }

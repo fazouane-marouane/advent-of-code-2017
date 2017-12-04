@@ -18,6 +18,7 @@
     "-bs-super-errors"
   ],
   "bs-dependencies": [
+    "bs-jest"
       // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.
   ],
   "namespace": true,
