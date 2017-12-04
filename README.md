@@ -2,8 +2,6 @@
 
 Those are my personal solutions to [Advent of Code 2017](http://adventofcode.com/2017).
 
-# Progress
-
 Day | Title | Status
 ----|-------|------
 [01][day01-url] | Inverse Captcha | [![completed]](/src/day01/)
