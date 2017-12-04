@@ -11,8 +11,13 @@ Day | Title | Status
 
 # Build
 
-```
+```bash
+# install the dependencies
+npm install
+# build the code
 npm run build
+# run all the tests
+npm run test
 ```
 
 # Run
@@ -23,8 +28,11 @@ npm start day01
 
 # Build + Watch
 
-```
+```bash
+# The constantly build the code
 npm run watch
+# The constantly run tests
+npm run test-watch
 ```
 
 # Editor
