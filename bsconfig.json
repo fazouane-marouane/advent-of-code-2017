@@ -4,13 +4,19 @@
   "name": "advent-of-code-2017",
   "version": "0.1.0",
   "sources": [
-    "src"
+    {
+      "dir": "src",
+      "subdirs": true // recursively builds every subdirectory
+    }
   ],
   "package-specs": {
     "module": "commonjs",
     "in-source": true
   },
   "suffix": ".bs.js",
+  "bsc-flags": [
+    "-bs-super-errors"
+  ],
   "bs-dependencies": [
       // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.
   ],
