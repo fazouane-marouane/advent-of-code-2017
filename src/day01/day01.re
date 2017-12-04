@@ -1,21 +1,29 @@
 open AdventHelpers;
 
-let fold = (f, acc, length, nthElement) => {
-  let rec fold_helper = (n, acc) =>
-    if (n == length) {
-      acc
-    } else {
-      fold_helper(n + 1, f(nthElement(n), acc))
+/** Lazily evaluated lists with fold capabilities */
+module ImplicitList = {
+  type t('a) =
+    | Nil
+    | Cons('a, unit => t('a));
+  let rec fold_left = (f, acc, l) =>
+    switch l {
+    | Nil => acc
+    | Cons(head, rest) => fold_left(f, f(head, acc), rest())
     };
-  fold_helper(0, acc);
 };
 
-
 let captcha = (str, shift) => {
-  let accumulator = ((c1, c2), acc) => acc + (c1 == c2 ? int_of_string(Char.escaped(c1)) : 0);
+  open ImplicitList;
   let length = String.length(str);
+  /* function to compute the sum of matching pairs of characters */
+  let accumulator = ((c1, c2), acc) => acc + (c1 == c2 ? int_of_string(Char.escaped(c1)) : 0);
+  /* function producing the two characters that should be paired together */
   let nthElement = (i) => (str.[i], str.[(i + shift) mod length]);
-  fold(accumulator, 0, length, nthElement);
+  let implicitList = {
+    let rec rest = (i, ()) => i < length ? Cons(nthElement(i), rest(i + 1)) : Nil;
+    rest(0, ())
+  };
+  implicitList |> fold_left(accumulator, 0)
 };
 
 [@bs.val] external dirname : string = "__dirname";
