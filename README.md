@@ -6,8 +6,8 @@ Those are my personal solutions to [Advent of Code 2017](http://adventofcode.com
 
 Day | Title | Status
 ----|-------|------
-[01][day01-url] | Inverse Captcha | [![completed]][day01-url]
-[02][day02-url] | Corruption Checksum | [![not-started]][day02-url]
+[01][day01-url] | Inverse Captcha | [![completed]](/src/day01/)
+[02][day02-url] | Corruption Checksum | [![not-started]](/src/day02/)
 
 # Build
 
