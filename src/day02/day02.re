@@ -2,7 +2,7 @@ open AdventHelpers;
 
 let partial_checksum = (line) => {
   let (minValue, maxValue) =
-    switch (Array.to_list(line) |> List.map(int_of_string)) {
+    switch line {
     | [head, ...rest] =>
       List.fold_left(
         ((minValue, maxValue), value) => (min(minValue, value), max(maxValue, value)),
@@ -14,9 +14,11 @@ let partial_checksum = (line) => {
   maxValue - minValue
 };
 
+let ints_of_line_string = str => Js.String.split("\t", str) |> Array.map(int_of_string) |> Array.to_list;
+
 let checksum = (str) =>
   Js.String.split("\n", str)
-  |> Array.map((line) => Js.String.split("\t", line) |> partial_checksum)
+  |> Array.map(l => l |> ints_of_line_string |> partial_checksum)
   |> Array.fold_left((+), 0);
 
 [@bs.val] external dirname : string = "__dirname";
