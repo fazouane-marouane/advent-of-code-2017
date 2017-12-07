@@ -4,6 +4,16 @@ let run = (name) =>
   | "day01" => Day01.run()
   | "day2"
   | "day02" => Day02.run()
+  | "day3"
+  | "day03" => Day03.run()
+  | "day4"
+  | "day04" => Day04.run()
+  | "day5"
+  | "day05" => Day05.run()
+  | "day6"
+  | "day06" => Day06.run()
+  | "day7"
+  | "day07" => Day07.run()
   | _ => Js.log("not yet implemented")
   };
 
