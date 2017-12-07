@@ -1,5 +1,9 @@
 open AdventHelpers;
 
+type checksumMode =
+  | MinMax
+  | Division;
+
 let minmax_checksum = (line) => {
   let (minValue, maxValue) =
     switch line {
@@ -14,14 +18,19 @@ let minmax_checksum = (line) => {
   maxValue - minValue
 };
 
-let division_checksum = (line: list(int)) => 0;
+let rec division_checksum = (line: list(int)) =>
+  switch line {
+  | [head, ...rest] =>
+    let otherValueFound = (value) => value mod head === 0 || head mod value === 0;
+    let division = (value) => max(head, value) / min(head, value);
+    try (List.find(otherValueFound, rest) |> division) {
+    | Not_found => division_checksum(rest)
+    }
+  | [] => 0
+  };
 
 let ints_of_line_string = (str) =>
   Js.String.split("\t", str) |> Array.map(int_of_string) |> Array.to_list;
-
-type checksumMode =
-  | MinMax
-  | Division;
 
 let checksum = (str, mode) => {
   let checksumMethod =
