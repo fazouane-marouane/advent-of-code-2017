@@ -9,7 +9,7 @@ Day | Title | Status
 [03][day03-url] | Spiral Memory | [![completed]](/src/day03/)
 [04][day04-url] | High-Entropy Passphrases | [![completed]](/src/day04/)
 [05][day05-url] | A Maze of Twisty Trampolines, All Alike | [![completed]](/src/day05/)
-[06][day06-url] | Memory Reallocation | [![not-started]](/src/day06/)
+[06][day06-url] | Memory Reallocation | [![completed]](/src/day06/)
 [07][day07-url] | Recursive Circus | [![not-started]](/src/day07/)
 
 # Build
