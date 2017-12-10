@@ -7,7 +7,7 @@ Day | Title | Status
 [01][day01-url] | Inverse Captcha | [![completed]](/src/day01/)
 [02][day02-url] | Corruption Checksum | [![completed]](/src/day02/)
 [03][day03-url] | Spiral Memory | [![completed]](/src/day03/)
-[04][day04-url] | High-Entropy Passphrases | [![not-started]](/src/day04/)
+[04][day04-url] | High-Entropy Passphrases | [![completed]](/src/day04/)
 [05][day05-url] | A Maze of Twisty Trampolines, All Alike | [![not-started]](/src/day05/)
 [06][day06-url] | Memory Reallocation | [![not-started]](/src/day06/)
 [07][day07-url] | Recursive Circus | [![not-started]](/src/day07/)
