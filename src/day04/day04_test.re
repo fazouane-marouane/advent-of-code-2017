@@ -9,9 +9,14 @@ describe(
     test(
       "line 1",
       () =>
-        expect(is_valid(["nyot", "babgr", "babgr", "kqtu", "kqtu", "kzshonp", "ylyk", "psqk"]))
+        expect(
+          is_duplicates_free(["nyot", "babgr", "babgr", "kqtu", "kqtu", "kzshonp", "ylyk", "psqk"])
+        )
         |> toBe(false)
     );
-    test("line 2", () => expect(is_valid(["wchrl", "pzibt", "nvcae", "wceb"])) |> toBe(true))
+    test(
+      "line 2",
+      () => expect(is_duplicates_free(["wchrl", "pzibt", "nvcae", "wceb"])) |> toBe(true)
+    )
   }
 );
